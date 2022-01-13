@@ -120,5 +120,18 @@ Config 처럼 객체를 생성하고 관리하면서 의존관계를 연결해 �
 의존관계 주입에 초점을 맞춰 최근에는 주로 DI 컨테이너라 한다
 
 ### 스프링 컨테이너
-ApplicationContext 를 스프링 컨테이너라 한다
+ApplicationContext 를 스프링 컨테이너라 한다  
 @Bean 이 붙은 메서드의 명을 스프링 빈의 이름으로 사용한다
+
+### 스프링 컨테이너 생성
+@Bean 이 붙은 메서드들을 스프링 컨테이너에 등록한다 (메서드 이름 (@Bean(name = "이름") 방식으로 지정 가능): 키, return : 객체)
+
+### BeanFactory와 ApplicationContext
+ApplicationContext가 BeanFactory를 상속받는다  
+일반적으로 ApplicationContext만 사용한다
+
+#### ApplicationContext가 제공하는 부가기능
+메시지소스를 활용한 국제화 기능 예) 한국 -> 한국어  
+환경변수 : 로컬, 개발, 운영등을 구분해서 처리  
+애플리케이션 이벤트 : 이벤트를 발행하고 구독하는 모델을 편리하게 지원  
+편리한 리소스 조회 : 파일, 클래스패스, 외부 등에서 리소스를 편리하게 조회
